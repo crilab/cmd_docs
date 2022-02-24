@@ -1,0 +1,29 @@
+
+### FLOATING IP ###
+openstack floating ip list -f json
+#openstack floating ip show _ -f json
+
+### NETWORK ###
+openstack network list -f json
+#openstack network show _ -f json
+
+### PORT ###
+openstack port list -f json
+#openstack port show _ -f json
+
+### ROUTER ###
+openstack router list -f json
+#openstack router show _ -f json
+
+### SECURITY GROUP ###
+openstack security group list -f json
+#openstack security group show _ -f json
+
+### SERVER ###
+openstack server list -f json
+#openstack server show _ -f json
+
+### SUBNET ###
+openstack subnet list -f json
+#openstack subnet show _ -f json
+

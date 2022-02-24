@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>cmd_docs</title>
+	</head>
+	<body>
+		<script src="output.js"></script>
+		<script>
+			let commandList = document.createElement('div')
+			let h2 = document.createElement('h2')
+			h2.style.backgroundColor = 'LightGrey'
+			h2.style.fontFamily = 'monospace'
+			h2.style.padding = '10px'
+			h2.innerText = 'COMMANDS'
+			commandList.appendChild(h2)
+			document.body.appendChild(commandList)
+
+			let commandId = 0
+			for (const command in output) {
+				commandId += 1
+
+				let div = document.createElement('div')
+				let h3 = document.createElement('h3')
+				let pre = document.createElement('pre')
+				div.style.pageBreakBefore = 'always'
+				h3.id = 'command_' + commandId
+				h3.style.backgroundColor = 'black'
+				h3.style.color = 'white'
+				h3.style.fontFamily = 'monospace'
+				h3.style.padding = '10px'
+				h3.innerText = command
+				pre.innerText = atob(output[command])
+				div.appendChild(h3)
+				div.appendChild(pre)
+				document.body.appendChild(div)
+
+				let a = document.createElement('a')
+				a.style.color = 'black'
+				a.style.fontFamily = 'monospace'
+				a.style.textDecoration = 'none'
+				a.innerText = command
+				a.href = '#' + h3.id
+				commandList.appendChild(a)
+				commandList.appendChild(document.createElement('br'))
+			}
+		</script>
+	</body>
+</html>
